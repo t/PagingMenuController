@@ -303,7 +303,7 @@ extension MenuItemView {
     
     fileprivate func estimatedLabelSize(_ label: UILabel) -> CGSize {
         guard let text = label.text else { return .zero }
-        return NSString(string: text).boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: label.font], context: nil).size
+        return NSString(string: text).boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, attributes: convertToOptionalNSAttributedStringKeyDictionary([convertFromNSAttributedStringKey(NSAttributedString.Key.font): label.font]), context: nil).size
     }
     
     fileprivate func calculateLabelSize(_ label: UILabel, maxWidth: CGFloat) -> CGSize {
@@ -326,4 +326,15 @@ extension MenuItemView {
     fileprivate var maxWindowSize: CGFloat {
         return UIApplication.shared.keyWindow?.bounds.width ?? UIScreen.main.bounds.width
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromNSAttributedStringKey(_ input: NSAttributedString.Key) -> String {
+	return input.rawValue
 }
