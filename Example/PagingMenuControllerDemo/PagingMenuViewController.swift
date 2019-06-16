@@ -16,7 +16,7 @@ class PagingMenuViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let pagingMenuController = self.childViewControllers.first as! PagingMenuController
+        let pagingMenuController = self.children.first as! PagingMenuController
         pagingMenuController.setup(options)
         pagingMenuController.onMove = { state in
             switch state {
