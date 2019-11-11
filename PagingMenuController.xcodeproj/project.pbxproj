@@ -137,7 +137,7 @@
 				TargetAttributes = {
 					ECE530661B6DEB18001CF201 = {
 						CreatedOnToolsVersion = 6.4;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -146,6 +146,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = ECE5305D1B6DEB18001CF201;
@@ -294,7 +295,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -313,7 +314,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

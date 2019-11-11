@@ -484,7 +484,7 @@ extension PagingMenuController {
     @objc internal func handleTapGesture(_ recognizer: UITapGestureRecognizer) {
         guard let menuItemView = recognizer.view as? MenuItemView,
             let menuView = menuView,
-            let page = menuView.menuItemViews.index(of: menuItemView),
+            let page = menuView.menuItemViews.firstIndex(of: menuItemView),
             page != menuView.currentPage,
             let menuOptions = menuOptions else { return }
         

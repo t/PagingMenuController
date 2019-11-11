@@ -99,7 +99,7 @@ open class PagingViewController: UIViewController {
                     controller.view!.removeFromSuperview()
                     controller.removeFromParent()
                     
-                    let _ = visibleControllers.index(of: controller).flatMap { visibleControllers.remove(at: $0) }
+                    let _ = visibleControllers.firstIndex(of: controller).flatMap { visibleControllers.remove(at: $0) }
                 }
                 continue
             }
